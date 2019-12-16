@@ -17,7 +17,7 @@
 
 
 class Solution:
-    def permute(self, nums: List[int]) -> List[List[int]]:
+    def permute(self, nums: 'List[int]') -> 'List[List[int]]':
         res = []
         o = len(nums)
 
