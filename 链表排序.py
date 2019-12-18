@@ -17,7 +17,7 @@ class ListNode:
         self.val = x
         self.next = None
 
-# 一：归并排序（递归）
+# 一、归并排序（递归）
 
 
 class Solution:
@@ -41,3 +41,9 @@ class Solution:
             h = h.next
         h.next = left if left else right
         return res.next
+
+# 二、归并排序（从底至顶直接合并）
+
+
+
+
