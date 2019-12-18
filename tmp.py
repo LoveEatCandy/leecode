@@ -1,34 +1,38 @@
 '''
-给定一个二叉搜索树，编写一个函数 kthSmallest 来查找其中第 k 个最小的元素。
+给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。
 
-说明：
-你可以假设 k 总是有效的，1 ≤ k ≤ 二叉搜索树元素个数。
+百度百科中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。”
+
+例如，给定如下二叉树:  root = [3,5,1,6,2,0,8,null,null,7,4]
+
+
+
+ 
 
 示例 1:
 
-输入: root = [3,1,4,null,2], k = 1
-   3
-  / \
- 1   4
-  \
-   2
-输出: 1
-示例 2:
-
-输入: root = [5,3,6,2,4,null,null,1], k = 3
-       5
-      / \
-     3   6
-    / \
-   2   4
-  /
- 1
+输入: root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 1
 输出: 3
-进阶：
-如果二叉搜索树经常被修改（插入/删除操作）并且你需要频繁地查找第 k 小的值，你将如何优化 kthSmallest 函数？
+解释: 节点 5 和节点 1 的最近公共祖先是节点 3。
+示例 2:
+
+输入: root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 4
+输出: 5
+解释: 节点 5 和节点 4 的最近公共祖先是节点 5。因为根据定义最近公共祖先节点可以为节点本身。
+ 
+
+说明:
+
+所有节点的值都是唯一的。
+p、q 为不同节点且均存在于给定的二叉树中。
+
+来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 '''
 
 
+# Definition for a binary tree node.
 class TreeNode:
     def __init__(self, x):
         self.val = x
@@ -37,21 +41,6 @@ class TreeNode:
 
 
 class Solution:
-    def kthSmallest(self, root: TreeNode, k: int) -> int:
-        stack = []
-        r = []
-
-        while root or stack:
-            if root:
-                stack.append(root)
-                root = root.left
-            else:
-                root = stack.pop()
-                r.append(root.val)
-                root = root.right
-                if len(r) >= k:
-                    break
-        return r[k]
-
+    def lowestCommonAncestor(self, root: TreeNode, p: TreeNode, q: TreeNode) -> TreeNode:
         pass
 
