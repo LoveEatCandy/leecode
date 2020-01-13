@@ -31,3 +31,17 @@ class Solution:
             dp = ndp
         return dp[-1]
 
+
+class Solution2:
+    def minDistance(self, word1: str, word2: str) -> int:
+        m, n = len(word1), len(word2)
+
+        d = [[0 for _ in range(m+1)] for _ in range(n+1)]
+        for i in range(n+1):
+            for j in range(m+1):
+                if word1[j-1] == word2[i-1]:
+                    d[i][j] = d[i-1][j-1] + 1
+                else:
+                    d[i][j] = max(d[i-1][j], d[i][j-1])
+        return m+n-2*d[n][m]
+
