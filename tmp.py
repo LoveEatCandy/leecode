@@ -24,11 +24,11 @@
 
 
 # Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
 
 
 class Solution:
@@ -62,3 +62,4 @@ class Solution:
                 cur_list, cache, tmp = cache, [], []
                 cur = 1 if cur == 0 else 0
         return r
+
