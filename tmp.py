@@ -1,6 +1,3 @@
-from collections import defaultdict
-
-
 class Solution:
     def minTransfers(self, transactions: list(list(int))) -> int:
         people = defaultdict(int)

@@ -54,11 +54,8 @@ class Solution:
         for x, y, z in transactions:
             people[x] -= z
             people[y] += z
-        price = []
-        for v in people.values():
-            if v != 0:
-                price.append(v)
-        res = float('inf')
+        price = [i for i in people.values() if i]
+        res = len(price)
 
         def dfs(i, cnt):
             nonlocal res
