@@ -1,26 +1,16 @@
 class Solution:
-    def minTransfers(self, transactions: list(list(int))) -> int:
-        people = defaultdict(int)
-        for x, y, z in transactions:
-            people[x] -= z
-            people[y] += z
-        price = []
-        for v in people.values():
-            if v != 0:
-                price.append(v)
-        res = float('inf')
+    def validateStackSequences(self, pushed: 'List[int]', popped: 'List[int]') -> bool:
+        '''
+        :param pushed: [1,2,3,4,5]
+        :param popped: [4,5,3,2,1]
+        :return: True
+        '''
+        stack = []
+        for push in pushed:
+            while popped and push == popped[0]:
+                popped = popped[1:]
+                push = stack[-1]
+            else:
+                stack.append(push)
 
-        def dfs(i, cnt):
-            nonlocal res
-            while cnt > res: return
-            while i < len(price) and price[i] == 0: i += 1
-            if i == len(price):
-                res = min(res, cnt)
-                return
-            for j in range(i + 1, len(price)):
-                if price[i] * price[j] < 0:
-                    price[j] += price[i]
-                    dfs(i + 1, cnt + 1)
-                    price[j] -= price[i]
-
-        return res
+        return popped == []
