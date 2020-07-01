@@ -70,16 +70,9 @@ class Solution:
             if others:
                 for i, w in enumerate(others):
                     if len(cur) > 0:
-                        before = cur[-1]
-                        next = w
-                        if before > next:
-                            l = [next, before]
-                        else:
-                            l = [before, next]
-                        key = "".join(map(str, l))
-                        if key in condition:
-                            if condition[key] not in cur:
-                                continue
+                        key = '%d%d' % (min(w, cur[-1]), max(w, cur[-1]))
+                        if key in condition and condition.get(key) not in cur:
+                            continue
                     do(cur+[w], others[:i]+others[i+1:])
         do([1], mode[1:])
         do([2], mode[:1]+mode[2:])
