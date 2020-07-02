@@ -50,7 +50,7 @@ class TreeNode:
 
 class Solution:
     def maxProduct(self, root: TreeNode) -> int:
-        cache = []
+        cache = set()
 
         def get_total(node):
             left_val, right_val = 0, 0
@@ -59,7 +59,7 @@ class Solution:
             if node.right:
                 right_val = get_total(node.right)
             total = node.val + left_val + right_val
-            cache.append(total)
+            cache.add(total)
             return total
 
         total = get_total(root)

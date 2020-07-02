@@ -17,6 +17,7 @@ arr 长度范围在[1, 1000000]之间
 链接：https://leetcode-cn.com/problems/search-rotate-array-lcci
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 '''
+from typing import List
 
 
 class Solution:
@@ -25,9 +26,9 @@ class Solution:
             return -1
         left, right = 0, len(nums) - 1
         while left < right:                                         # 循环结束条件left==right
-            mid = (left + right) >> 1
+            mid = (left + right) // 1
             if nums[left] < nums[mid]:                              # 如果左值小于中值，说明左边区间升序
-                if nums[left] <= target and target <= nums[mid]:    # 如果目标在左边的升序区间中，右边界移动到mid
+                if nums[left] <= target <= nums[mid]:    # 如果目标在左边的升序区间中，右边界移动到mid
                     right = mid
                 else:                                               # 否则目标在右半边，左边界移动到mid+1
                     left = mid + 1

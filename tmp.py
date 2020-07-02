@@ -1,21 +1,66 @@
-import heapq
+from typing import List
+
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
 
 
-class Solution:
+def dfs(root: TreeNode) -> List[int]:
+    r = []
 
-    def __init__(self):
-        self.r = [1]
-        a = b = c = 0
-        for _ in range(1690):
-            v = min(self.r[a] * 2, self.r[b] * 3, self.r[c] * 5)
+    def do(cur):
+        r.append(cur.val)
+        if cur.left:
+            do(cur.left)
+        if cur.right:
+            do(cur.right)
+        return
 
-            if self.r[a] * 2 == v:
-                a += 1
-            elif self.r[b] * 3 == v:
-                b += 1
-            else:
-                c += 1
-            self.r.append(v)
+    do(root)
+    return r
 
-    def nthUglyNumber(self, n: int) -> int:
-        return self.r[n-1]
+
+def dfs2(root: TreeNode) -> List[int]:
+    stack = []
+    r = []
+
+    while root or stack:
+        if root:
+            r.append(root.val)
+            if root.right:
+                stack.append(root.right)
+            root = root.left
+        else:
+            root = stack.pop()
+    return r
+
+
+def bfs(root: TreeNode) -> List[int]:
+    cache = [root]
+    r = []
+
+    while cache:
+        tmp = []
+        for cur in cache:
+            r.append(cur.val)
+            if cur.left:
+                tmp.append(cur.left)
+            if cur.right:
+                tmp.append(cur.right)
+        cache = tmp
+
+    return r
+
+
+a = TreeNode(0)
+a.left = TreeNode(1)
+a.right = TreeNode(2)
+a.left.left = TreeNode(3)
+a.left.right = TreeNode(4)
+a.right.left = TreeNode(5)
+a.right.right = TreeNode(6)
+print(dfs(a))
+print(dfs2(a))
+
