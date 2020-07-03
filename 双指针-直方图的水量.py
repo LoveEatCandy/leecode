@@ -13,10 +13,11 @@
 链接：https://leetcode-cn.com/problems/volume-of-histogram-lcci
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 '''
+from typing import List
 
 
 class Solution:
-    def trap(self, height: 'List[int]') -> int:
+    def trap(self, height: List[int]) -> int:
         if not height:
             return 0
         n = len(height)

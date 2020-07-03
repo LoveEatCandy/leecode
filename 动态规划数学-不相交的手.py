@@ -36,4 +36,7 @@ class Solution2:
 链接：https://leetcode-cn.com/problems/handshakes-that-dont-cross/solution/zhi-jie-yong-qia-te-lan-shu-gong-shi-ke-yi-yi-xing/
 来源：力扣（LeetCode）
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+思路很简单，假设以1号为桩点，那么和1号握手的人只能是2，4，6...，n,此时1与i号握手所连成的线会把图分为左右两部分（之前的两个子问题），
+之所以不能和奇数人握手是因为会分割成奇数的两部分，两部分均无解，所有两部分的可能性乘积的和既为答案
 '''

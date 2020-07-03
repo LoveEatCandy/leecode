@@ -11,10 +11,11 @@
 你可以在常数空间复杂度内完成这个题目吗？（ 出于对空间复杂度分析的目的，输出数组不被视为额外空间。）
 
 '''
+from typing import List
 
 
 class Solution:
-    def productExceptSelf(self, nums: 'List[int]') -> 'List[int]':
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
         l = len(nums)
         r = [1] * l
         for i in range(l):
