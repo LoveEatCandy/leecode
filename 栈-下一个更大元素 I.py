@@ -35,9 +35,9 @@ from typing import List
 
 class Solution:
     def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
-        stack, hashmap = [], {}
+        cache, hashmap = [], {}
         for i in nums2:
-            while len(stack) > 0 and stack[-1] < i:
-                hashmap[stack.pop()] = i
-            stack.append(i)
+            while len(cache) > 0 and cache[-1] < i:
+                hashmap[cache.pop()] = i
+            cache.append(i)
         return [hashmap.get(i, -1) for i in nums1]
