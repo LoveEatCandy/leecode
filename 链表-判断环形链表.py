@@ -47,7 +47,7 @@ class Solution:
     def detectCycle(self, head: ListNode) -> ListNode:
         fast = self.get_intersect(head)
         if not fast:
-            return None
+            return ListNode(None)
         slow = head
         while fast != slow:
             fast = fast.next

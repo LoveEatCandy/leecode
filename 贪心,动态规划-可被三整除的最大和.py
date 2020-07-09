@@ -29,11 +29,12 @@
 链接：https://leetcode-cn.com/problems/greatest-sum-divisible-by-three
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 '''
+from typing import List
 
 
 # 动态规划
 class Solution:
-    def maxSumDivThree(self, nums: 'List[int]') -> int:
+    def maxSumDivThree(self, nums: List[int]) -> int:
         r = [0, -1, -1]
         for num in nums:
             g = r[:]
@@ -46,7 +47,7 @@ class Solution:
 
 # 贪心 + 正向思维
 class Solution1:
-    def maxSumDivThree(self, nums: 'List[int]') -> int:
+    def maxSumDivThree(self, nums: List[int]) -> int:
         a = [x for x in nums if x % 3 == 0]
         b = sorted([x for x in nums if x % 3 == 1], reverse=True)
         c = sorted([x for x in nums if x % 3 == 2], reverse=True)
@@ -63,7 +64,7 @@ class Solution1:
 
 # 贪心 + 逆向思维
 class Solution2:
-    def maxSumDivThree(self, nums: 'List[int]') -> int:
+    def maxSumDivThree(self, nums: List[int]) -> int:
         b = sorted([x for x in nums if x % 3 == 1], reverse=True)
         c = sorted([x for x in nums if x % 3 == 2], reverse=True)
         tot = sum(nums)
