@@ -28,15 +28,19 @@ class ListNode:
 
 class Solution:
     def mergeKLists(self, lists: List[ListNode]) -> ListNode:
-        heaq = []
-        for node in lists:
-            while node:
-                heapq.heappush(heaq, node.val)
-                node = node.next
+        import heapq
+        que = []  # curs存K个链表滑动的头指针
+        for index, node in enumerate(lists):
+            if node is not None:
+                heapq.heappush(que, (node.val, index))
 
-        start = ListNode(-1)
-        cur = start
-        while heaq:
-            cur.next = ListNode(heapq.heappop(heaq))
+        dummy_node = ListNode(-1)
+        cur = dummy_node
+        while que:
+            val, index = heapq.heappop(que)
+            cur.next = lists[index]
             cur = cur.next
-        return start.next
+            lists[index] = lists[index].next
+            if lists[index] is not None:
+                heapq.heappush(que, (lists[index].val, index))
+        return dummy_node.next
