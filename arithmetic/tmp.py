@@ -1,9 +1,21 @@
-from datetime import datetime
+class Solution:
+
+    def __init__(self):
+        self.cache = [1] * 59
+        self.cache[0] = 0 
+        self.cache[1] = 1
+        i = 2
+        while i <= 58:
+            self.cache[i] = max(self.cache[i // 2], i // 2) * \
+                max(self.cache[i - i // 2], i - i//2)
+            i += 1
+
+    def cuttingRope(self, n: int) -> int:
+        return self.cache[n]
 
 
-def check_time():
-    if datetime.now().hour == 16:
-        raise AssertionError("超过23点，自动关闭！")
+a = Solution()
+print(a.cuttingRope(8))
+import math
 
-
-check_time()
+math.sqrt()
