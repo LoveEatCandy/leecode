@@ -1,21 +1,31 @@
+from typing import List
+
+
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
 class Solution:
-
-    def __init__(self):
-        self.cache = [1] * 59
-        self.cache[0] = 0 
-        self.cache[1] = 1
-        i = 2
-        while i <= 58:
-            self.cache[i] = max(self.cache[i // 2], i // 2) * \
-                max(self.cache[i - i // 2], i - i//2)
-            i += 1
-
-    def cuttingRope(self, n: int) -> int:
-        return self.cache[n]
-
-
-a = Solution()
-print(a.cuttingRope(8))
-import math
-
-math.sqrt()
+    def levelOrder(self, root: TreeNode) -> List[List[int]]:
+        if not root:
+            return []
+        quene = [root]
+        r = []
+        left = True
+        while quene:
+            tmp = []
+            cur = []
+            for node in quene:
+                cur.append(node.val)
+                if node.left:
+                    tmp.append(node.left)
+                if node.right:
+                    tmp.append(node.right)
+            if not left:
+                cur.reverse()
+            r.append(cur)
+            left = not left
+            quene = tmp
+        return r
