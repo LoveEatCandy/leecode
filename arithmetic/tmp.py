@@ -1,31 +1,18 @@
 from typing import List
 
 
-class TreeNode:
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None
-
 class Solution:
-    def levelOrder(self, root: TreeNode) -> List[List[int]]:
-        if not root:
+    def permutation(self, s: str) -> List[str]:
+        if not s:
             return []
-        quene = [root]
-        r = []
-        left = True
-        while quene:
-            tmp = []
-            cur = []
-            for node in quene:
-                cur.append(node.val)
-                if node.left:
-                    tmp.append(node.left)
-                if node.right:
-                    tmp.append(node.right)
-            if not left:
-                cur.reverse()
-            r.append(cur)
-            left = not left
-            quene = tmp
-        return r
+        r = set()
+
+        def do(tmp, other):
+            if not other:
+                r.add(tmp)
+            else:
+                for i, ss in enumerate(other):
+                    do(tmp+ss, other[:i-1]+other[i+1:])
+        do('', s)
+        return list(r)
+
