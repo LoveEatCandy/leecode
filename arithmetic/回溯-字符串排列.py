@@ -18,6 +18,7 @@
 
 1 <= s 的长度 <= 8
 '''
+from typing import List
 
 
 class Solution:
