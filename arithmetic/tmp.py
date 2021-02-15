@@ -2,19 +2,27 @@ from typing import List
 
 
 class Solution:
-    def maxSumWithLeftRight(self, A, L, R):
-        max_L = sum(A[:L])
-        res = max_L
-        for i in range(L, len(A)-R+1):
-            max_L = max(max_L, sum(A[i-L:i]))
-            res = max(res, max_L + sum(A[i:i+R]))
-            print(A[i-L:i], A[i:i+R], max_L, res)
-        return res
+    def wordBreak(self, s: str, wordDict: List[str]) -> List[str]:
+        wordDict = wordDict[::-1]
+        r = []
 
-    def maxSumTwoNoOverlap(self, A: List[int], L: int, M: int) -> int:
-        return max(self.maxSumWithLeftRight(A, L, M), self.maxSumWithLeftRight(A, M, L))
+        def do(before, others):
+            nonlocal r
+            print(before, others)
+            for cur in wordDict:
+                if others.startswith(cur):
+                    tmp = others[len(cur):]
+                    tmp_ = before + " " + cur if before else cur
+                    if tmp:
+                        do(tmp_, tmp)
+                    else:
+                        r.append(tmp_)
+            return
+
+        do("", s)
+        return r
 
 
-print(Solution().maxSumTwoNoOverlap([1, 0, 3], 1, 2))
-
-20
+a = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+b = ["a", "aa", "aaa", "aaaa", "aaaaa", "aaaaaa", "aaaaaaa", "aaaaaaaa", "aaaaaaaaa", "aaaaaaaaaa"]
+print(Solution().wordBreak(a, b))
