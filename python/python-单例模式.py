@@ -1,6 +1,8 @@
 import threading
 import time
 
+# import是单例
+
 
 class A:
     _instance = None

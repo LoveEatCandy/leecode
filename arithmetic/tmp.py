@@ -1,20 +1,31 @@
-from typing import List
+from typing import *
 
 
 class Solution:
-    def maxSumWithLeftRight(self, A, L, R):
-        max_L = sum(A[:L])
-        res = max_L
-        for i in range(L, len(A)-R+1):
-            max_L = max(max_L, sum(A[i-L:i]))
-            res = max(res, max_L + sum(A[i:i+R]))
-            print(A[i-L:i], A[i:i+R], max_L, res)
-        return res
+    def coinChange(self, coins: List[int], amount: int) -> int:
+        if amount == 0:
+            return 0
+        coins.sort(reverse=True)
+        cache = {coin: 1 for coin in coins}
 
-    def maxSumTwoNoOverlap(self, A: List[int], L: int, M: int) -> int:
-        return max(self.maxSumWithLeftRight(A, L, M), self.maxSumWithLeftRight(A, M, L))
+        def do(balance):
+            if balance in cache:
+                return cache[balance]
+            rr = float('inf')
+            for coin in coins:
+                if balance == coin:
+                    return 1
+                elif coin < balance:
+                    r = do(balance - coin)
+                    if r:
+                        rr = min(rr, r + 1)
+            rr = None if rr == float('inf') else rr
+            cache[balance] = rr
+            return rr
+
+        return do(amount) or -1
 
 
-print(Solution().maxSumTwoNoOverlap([1, 0, 3], 1, 2))
-
-20
+coins = [186, 419, 83, 408]
+amount = 6249
+print(Solution().coinChange(coins, amount))
