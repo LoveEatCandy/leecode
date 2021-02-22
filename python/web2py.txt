@@ -1,0 +1,112 @@
+ab -n 100 -c 100 http://www.17jingsai.com:9004/match/intro/215
+
+Concurrency Level:      100
+Time taken for tests:   9.250 seconds
+Complete requests:      1000
+Failed requests:        0
+Total transferred:      14307000 bytes
+HTML transferred:       13900000 bytes
+Requests per second:    108.11 [#/sec] (mean)
+Time per request:       924.991 [ms] (mean)
+Time per request:       9.250 [ms] (mean, across all concurrent requests)
+Transfer rate:          1510.47 [Kbytes/sec] received
+Percentage of the requests served within a certain time (ms)
+  50%    892
+  66%    911
+  75%    932
+  80%    955
+  90%    996
+  95%   1050
+  98%   1128
+  99%   1185
+ 100%   1998 (longest request)
+
+
+Concurrency Level:      200
+Time taken for tests:   12.271 seconds
+Complete requests:      1000
+Failed requests:        0
+Total transferred:      14307000 bytes
+HTML transferred:       13900000 bytes
+Requests per second:    81.49 [#/sec] (mean)
+Time per request:       2454.252 [ms] (mean)
+Time per request:       12.271 [ms] (mean, across all concurrent requests)
+Transfer rate:          1138.57 [Kbytes/sec] received
+Percentage of the requests served within a certain time (ms)
+  50%    965
+  66%    983
+  75%   1006
+  80%   1193
+  90%   4038
+  95%   8553
+  98%  10650
+  99%  10980
+ 100%  11294 (longest request)
+
+
+Concurrency Level:      300
+Time taken for tests:   15.531 seconds
+Complete requests:      1000
+Failed requests:        0
+Total transferred:      14307651 bytes
+HTML transferred:       13900000 bytes
+Requests per second:    64.39 [#/sec] (mean)
+Time per request:       4659.223 [ms] (mean)
+Time per request:       15.531 [ms] (mean, across all concurrent requests)
+Transfer rate:          899.66 [Kbytes/sec] received
+Percentage of the requests served within a certain time (ms)
+  50%    984
+  66%   1008
+  75%   1909
+  80%   2811
+  90%   8253
+  95%  11552
+  98%  15311
+  99%  15385
+ 100%  15451 (longest request)
+
+
+Concurrency Level:      400
+Time taken for tests:   14.036 seconds
+Complete requests:      1000
+Failed requests:        0
+Total transferred:      14308000 bytes
+HTML transferred:       13900000 bytes
+Requests per second:    71.25 [#/sec] (mean)
+Time per request:       5614.408 [ms] (mean)
+Time per request:       14.036 [ms] (mean, across all concurrent requests)
+Transfer rate:          995.49 [Kbytes/sec] received
+Percentage of the requests served within a certain time (ms)
+  50%   1149
+  66%   2071
+  75%   5460
+  80%   7696
+  90%   8622
+  95%   9077
+  98%   9327
+  99%   9581
+ 100%  13989 (longest request)
+
+
+Concurrency Level:      500
+Time taken for tests:   27.778 seconds
+Complete requests:      1000
+Failed requests:        8
+   (Connect: 0, Receive: 0, Length: 8, Exceptions: 0)
+Non-2xx responses:      8
+Total transferred:      14195984 bytes
+HTML transferred:       13790224 bytes
+Requests per second:    36.00 [#/sec] (mean)
+Time per request:       13888.841 [ms] (mean)
+Time per request:       27.778 [ms] (mean, across all concurrent requests)
+Transfer rate:          499.08 [Kbytes/sec] received
+Percentage of the requests served within a certain time (ms)
+  50%   2030
+  66%   7456
+  75%   8392
+  80%  14253
+  90%  20305
+  95%  27296
+  98%  27570
+  99%  27656
+ 100%  27722 (longest request)
