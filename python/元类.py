@@ -25,7 +25,7 @@ class Meta(ABCMeta):
 class Foo(metaclass=Meta):
     def __new__(cls, *args, **kwargs):
         print("entering Class.__new__()")
-        rv = super().__new__(cls, *args, **kwargs)
+        rv = super().__new__(cls)
         print("exiting Class.__new__()")
         return rv
 
