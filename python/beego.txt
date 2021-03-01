@@ -1,0 +1,67 @@
+Concurrency Level:      1000
+Time taken for tests:   8.262 seconds
+Complete requests:      10000
+Failed requests:        4
+   (Connect: 0, Receive: 0, Length: 4, Exceptions: 0)
+Total transferred:      7138752 bytes
+HTML transferred:       3608756 bytes
+Requests per second:    1210.31 [#/sec] (mean)
+Time per request:       826.234 [ms] (mean)
+Time per request:       0.826 [ms] (mean, across all concurrent requests)
+Transfer rate:          843.76 [Kbytes/sec] received
+Percentage of the requests served within a certain time (ms)
+  50%    720
+  66%    765
+  75%    819
+  80%    871
+  90%   1031
+  95%   1261
+  98%   1539
+  99%   2189
+ 100%   2247 (longest request)
+
+
+Concurrency Level:      1500
+Time taken for tests:   7.313 seconds
+Complete requests:      10000
+Failed requests:        744
+   (Connect: 0, Receive: 0, Length: 744, Exceptions: 0)
+Total transferred:      6907872 bytes
+HTML transferred:       3378616 bytes
+Requests per second:    1367.41 [#/sec] (mean)
+Time per request:       1096.962 [ms] (mean)
+Time per request:       0.731 [ms] (mean, across all concurrent requests)
+Transfer rate:          922.45 [Kbytes/sec] received
+Percentage of the requests served within a certain time (ms)
+  50%    984
+  66%   1019
+  75%   1064
+  80%   1093
+  90%   1261
+  95%   1750
+  98%   1822
+  99%   2358
+ 100%   5059 (longest request)
+
+
+Concurrency Level:      2000
+Time taken for tests:   8.399 seconds
+Complete requests:      10000
+Failed requests:        1138
+   (Connect: 0, Receive: 0, Length: 1138, Exceptions: 0)
+Total transferred:      6784944 bytes
+HTML transferred:       3256082 bytes
+Requests per second:    1190.57 [#/sec] (mean)
+Time per request:       1679.861 [ms] (mean)
+Time per request:       0.840 [ms] (mean, across all concurrent requests)
+Transfer rate:          788.87 [Kbytes/sec] received
+Percentage of the requests served within a certain time (ms)
+  50%   1210
+  66%   1271
+  75%   1339
+  80%   1394
+  90%   1975
+  95%   2316
+  98%   3402
+  99%   4004
+ 100%   6097 (longest request)

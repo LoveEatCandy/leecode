@@ -1,0 +1,157 @@
+Concurrency Level:      100
+Time taken for tests:   2.116 seconds
+Complete requests:      1000
+Failed requests:        0
+Total transferred:      1056000 bytes
+HTML transferred:       759000 bytes
+Requests per second:    472.65 [#/sec] (mean)
+Time per request:       211.572 [ms] (mean)
+Time per request:       2.116 [ms] (mean, across all concurrent requests)
+Transfer rate:          487.42 [Kbytes/sec] received
+Percentage of the requests served within a certain time (ms)
+  50%    201
+  66%    221
+  75%    233
+  80%    247
+  90%    263
+  95%    270
+  98%    276
+  99%    285
+ 100%   1262 (longest request)
+
+Concurrency Level:      200
+Time taken for tests:   2.317 seconds
+Complete requests:      1000
+Failed requests:        0
+Total transferred:      1056000 bytes
+HTML transferred:       759000 bytes
+Requests per second:    431.64 [#/sec] (mean)
+Time per request:       463.354 [ms] (mean)
+Time per request:       2.317 [ms] (mean, across all concurrent requests)
+Transfer rate:          445.12 [Kbytes/sec] received
+Percentage of the requests served within a certain time (ms)
+  50%    161
+  66%    178
+  75%    213
+  80%    315
+  90%   1035
+  95%   1240
+  98%   1496
+  99%   1508
+ 100%   2116 (longest request)
+
+
+Concurrency Level:      300
+Time taken for tests:   4.581 seconds
+Complete requests:      1000
+Failed requests:        0
+Total transferred:      1056000 bytes
+HTML transferred:       759000 bytes
+Requests per second:    218.27 [#/sec] (mean)
+Time per request:       1374.422 [ms] (mean)
+Time per request:       4.581 [ms] (mean, across all concurrent requests)
+Transfer rate:          225.09 [Kbytes/sec] received
+Percentage of the requests served within a certain time (ms)
+  50%    390
+  66%    450
+  75%    598
+  80%   1407
+  90%   3028
+  95%   3134
+  98%   3178
+  99%   3193
+ 100%   3570 (longest request)
+
+
+Concurrency Level:      400
+Time taken for tests:   1.909 seconds
+Complete requests:      1000
+Failed requests:        0
+Total transferred:      1056000 bytes
+HTML transferred:       759000 bytes
+Requests per second:    523.90 [#/sec] (mean)
+Time per request:       763.509 [ms] (mean)
+Time per request:       1.909 [ms] (mean, across all concurrent requests)
+Transfer rate:          540.27 [Kbytes/sec] received
+Percentage of the requests served within a certain time (ms)
+  50%    168
+  66%    211
+  75%   1130
+  80%   1167
+  90%   1367
+  95%   1451
+  98%   1503
+  99%   1518
+ 100%   1533 (longest request)
+
+
+Concurrency Level:      500
+Time taken for tests:   26.767 seconds
+Complete requests:      10000
+Failed requests:        1
+   (Connect: 0, Receive: 0, Length: 1, Exceptions: 0)
+Non-2xx responses:      1
+Total transferred:      10559256 bytes
+HTML transferred:       7589423 bytes
+Requests per second:    373.60 [#/sec] (mean)
+Time per request:       1338.340 [ms] (mean)
+Time per request:       2.677 [ms] (mean, across all concurrent requests)
+Transfer rate:          385.25 [Kbytes/sec] received
+Percentage of the requests served within a certain time (ms)
+  50%    144
+  66%    154
+  75%    176
+  80%    177
+  90%    192
+  95%   1340
+  98%  14378
+  99%  15867
+ 100%  26757 (longest request)
+
+
+Concurrency Level:      800
+Time taken for tests:   43.070 seconds
+Complete requests:      10000
+Failed requests:        757
+   (Connect: 0, Receive: 0, Length: 757, Exceptions: 0)
+Non-2xx responses:      757
+Total transferred:      10016892 bytes
+HTML transferred:       7166611 bytes
+Requests per second:    232.18 [#/sec] (mean)
+Time per request:       3445.612 [ms] (mean)
+Time per request:       4.307 [ms] (mean, across all concurrent requests)
+Transfer rate:          227.12 [Kbytes/sec] received
+Percentage of the requests served within a certain time (ms)
+  50%    172
+  66%    185
+  75%    258
+  80%    364
+  90%   1437
+  95%  13999
+  98%  21951
+  99%  22596
+ 100%  43061 (longest request)
+
+
+Concurrency Level:      1000
+Time taken for tests:   63.115 seconds
+Complete requests:      10000
+Failed requests:        1227
+   (Connect: 0, Receive: 0, Length: 1227, Exceptions: 0)
+Non-2xx responses:      1227
+Total transferred:      9679221 bytes
+HTML transferred:       6901947 bytes
+Requests per second:    158.44 [#/sec] (mean)
+Time per request:       6311.483 [ms] (mean)
+Time per request:       6.311 [ms] (mean, across all concurrent requests)
+Transfer rate:          149.76 [Kbytes/sec] received
+Percentage of the requests served within a certain time (ms)
+  50%    361
+  66%   1021
+  75%   1323
+  80%   1813
+  90%  10104
+  95%  26237
+  98%  40045
+  99%  54634
+ 100%  61073 (longest request)
