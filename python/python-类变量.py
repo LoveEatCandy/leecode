@@ -11,5 +11,5 @@ class B:
 m = A()
 n = A()
 print(m.a, n.a)
-A.a = 2
+m.a = 2
 print(m.a, n.a)
