@@ -1,4 +1,4 @@
-'''
+"""
 汽车从起点出发驶向目的地，该目的地位于出发位置东面 target 英里处。
 
 沿途有加油站，每个 station[i] 代表一个加油站，它位于出发位置东面 station[i][0] 英里处，并且有 station[i][1] 升汽油。
@@ -44,7 +44,7 @@
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/minimum-number-of-refueling-stops
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-'''
+"""
 
 
 # 动态规划
@@ -66,8 +66,9 @@ class Solution1(object):
 class Solution(object):
     def minRefuelStops(self, target, tank, stations):
         import heapq
+
         pq = []  # A maxheap is simulated using negative values
-        stations.append((target, float('inf')))
+        stations.append((target, float("inf")))
 
         ans = prev = 0
         for location, capacity in stations:
@@ -83,9 +84,9 @@ class Solution(object):
         return ans
 
 
-'''
+"""
 作者：LeetCode
 链接：https://leetcode-cn.com/problems/minimum-number-of-refueling-stops/solution/zui-di-jia-you-ci-shu-by-leetcode/
 来源：力扣（LeetCode）
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-'''
+"""

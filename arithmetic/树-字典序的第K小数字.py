@@ -1,4 +1,4 @@
-'''
+"""
 给定整数 n 和 k，找到 1 到 n 中字典序第 k 小的数字。
 
 注意：1 ≤ k ≤ n ≤ 109。
@@ -17,12 +17,11 @@ n: 13   k: 2
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/k-th-smallest-in-lexicographical-order
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-'''
+"""
 
 
 class Solution:
     def findKthNumber(self, n: int, k: int) -> int:
-
         def get_count(prefix, n):
             count = 0
             _next = prefix + 1

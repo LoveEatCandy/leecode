@@ -1,4 +1,4 @@
-'''
+"""
 给定不同面额的硬币和一个总金额。写出函数来计算可以凑成总金额的硬币组合数。假设每一种面额的硬币有无限个。 
 
  
@@ -35,17 +35,16 @@
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/coin-change-2
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-'''
+"""
 from typing import List
 
 
 class Solution:
-
     def change(self, amount: int, coins: List[int]) -> int:
-        cache = [0] * (amount+1)
+        cache = [0] * (amount + 1)
         cache[0] = 1
 
         for coin in coins:
-            for x in range(coin, amount+1):
-                cache[x] += cache[x-coin]
+            for x in range(coin, amount + 1):
+                cache[x] += cache[x - coin]
         return cache[amount]

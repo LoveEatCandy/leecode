@@ -28,6 +28,7 @@ def front_sort2(root: TreeNode):
             r.append(cur.val)
             do(cur.left)
             do(cur.right)
+
     do(root)
     return r
 
@@ -55,6 +56,7 @@ def middle_sort2(root: TreeNode):
             do(cur.left)
             r.append(cur.val)
             do(cur.right)
+
     do(root)
     return r
 
@@ -85,6 +87,7 @@ def back_sort2(root: TreeNode):
             do(cur.left)
             do(cur.right)
             r.append(cur.val)
+
     do(root)
     return r
 
@@ -103,5 +106,3 @@ a.right = r1
 
 print(back_sort(a))
 print(back_sort2(a))
-
-

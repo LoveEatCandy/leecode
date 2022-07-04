@@ -1,4 +1,4 @@
-'''
+"""
 合并 k 个排序链表，返回合并后的排序链表。请分析和描述算法的复杂度。
 
 示例:
@@ -14,7 +14,7 @@
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/merge-k-sorted-lists
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-'''
+"""
 from typing import List
 import heapq
 
@@ -29,6 +29,7 @@ class ListNode:
 class Solution:
     def mergeKLists(self, lists: List[ListNode]) -> ListNode:
         import heapq
+
         que = []  # curs存K个链表滑动的头指针
         for index, node in enumerate(lists):
             if node is not None:

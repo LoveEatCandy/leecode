@@ -18,10 +18,10 @@ class MyClass:
     pass
 
 
-'''
+"""
 优点：装饰器的添加方式通常比多重继承更直观。
 缺点：使用MyClass（）创建的对象将是真正的单例对象，而MyClass本身是一个实例，而不是一个类，因此您不能从中调用类方法。
-'''
+"""
 
 
 # Method 2: A base class
@@ -41,10 +41,10 @@ class MyClass2(Singleton2):
     pass
 
 
-'''
+"""
 优点：是一个真是的类。
 缺点：多重继承，有可能被覆盖。
-'''
+"""
 
 from abc import ABCMeta
 
@@ -66,10 +66,10 @@ class MyClass3(metaclass=Singleton3):
     pass
 
 
-'''
+"""
 优点：是一个真实的类，避免多重继承覆盖。
 缺点：无。
-'''
+"""
 
 
 # Method 4: import

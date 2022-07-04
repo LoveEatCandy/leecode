@@ -1,4 +1,4 @@
-'''
+"""
 给定一个未排序的整数数组，找到最长递增子序列的个数。
 
 示例 1:
@@ -16,7 +16,7 @@
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/number-of-longest-increasing-subsequence
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-'''
+"""
 from typing import List
 
 

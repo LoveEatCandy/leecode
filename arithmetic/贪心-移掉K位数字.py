@@ -1,4 +1,4 @@
-'''
+"""
 给定一个以字符串表示的非负整数 num，移除这个数中的 k 位数字，使得剩下的数字最小。
 
 注意:
@@ -24,7 +24,7 @@ num 不会包含任何前导零。
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/remove-k-digits
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-'''
+"""
 
 
 class Solution:
@@ -44,7 +44,8 @@ class Solution:
         finalStack = numStack[:-k] if k else numStack
 
         # trip the leading zeros
-        return "".join(finalStack).lstrip('0') or "0"
+        return "".join(finalStack).lstrip("0") or "0"
+
 
 # 作者：LeetCode
 # 链接：https: // leetcode - cn.com / problems / remove - k - digits / solution / yi - diao - kwei - shu - zi - by - leetcode /

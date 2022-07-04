@@ -1,4 +1,4 @@
-'''
+"""
 输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历结果。如果是则返回 true，否则返回 false。假设输入的数组的任意两个数字都互不相同。
 
  
@@ -27,7 +27,7 @@
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-'''
+"""
 
 
 from typing import List
@@ -44,7 +44,7 @@ class Solution:
                 if nums[i] > root:
                     mid = i
                     break
-            for j in range(i, len(nums)-1):
+            for j in range(i, len(nums) - 1):
                 if nums[j] < root:
                     return False
             return helper(nums[:i]) and helper(nums[i:-1])

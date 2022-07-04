@@ -1,4 +1,4 @@
-'''
+"""
 给定一个只包含三种字符的字符串：（ ，） 和 *，写一个函数来检验这个字符串是否为有效字符串。有效字符串具有如下规则：
 
 任何左括号 ( 必须有相应的右括号 )。
@@ -25,7 +25,7 @@
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/valid-parenthesis-string
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-'''
+"""
 
 
 class Solution:
@@ -33,11 +33,11 @@ class Solution:
         left = []
         star = []
         for i, w in enumerate(s):
-            if w == '(':
+            if w == "(":
                 left.append(i)
-            elif w == '*':
+            elif w == "*":
                 star.append(i)
-            elif w == ')':
+            elif w == ")":
                 if len(left) > 0:
                     left.pop()
                 elif len(star) > 0:
@@ -52,4 +52,3 @@ class Solution:
         if left:
             return False
         return True
-

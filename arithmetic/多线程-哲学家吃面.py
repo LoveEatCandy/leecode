@@ -1,4 +1,4 @@
-'''
+"""
 import threading
 
 class DiningPhilosophers:
@@ -15,7 +15,7 @@ class DiningPhilosophers:
 链接：https://leetcode-cn.com/problems/the-dining-philosophers/solution/1226-zhe-xue-jia-jin-can-lun-liu-chi-mian-by-tuotu/
 来源：力扣（LeetCode）
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-'''
+"""
 from threading import Lock
 
 
@@ -25,13 +25,15 @@ class DiningPhilosophers:
         self.forks = [Lock() for _ in range(5)]
 
     # call the functions directly to execute, for example, eat()
-    def wantsToEat(self,
-                   philosopher: int,
-                   pickLeftFork: 'Callable[[], None]',
-                   pickRightFork: 'Callable[[], None]',
-                   eat: 'Callable[[], None]',
-                   putLeftFork: 'Callable[[], None]',
-                   putRightFork: 'Callable[[], None]') -> None:
+    def wantsToEat(
+        self,
+        philosopher: int,
+        pickLeftFork: "Callable[[], None]",
+        pickRightFork: "Callable[[], None]",
+        eat: "Callable[[], None]",
+        putLeftFork: "Callable[[], None]",
+        putRightFork: "Callable[[], None]",
+    ) -> None:
         with self.get:  # 下面原子
             left = (philosopher + 1) % 5  # 顺时针
             right = philosopher
@@ -47,9 +49,9 @@ class DiningPhilosophers:
             self.forks[right].release()  # 还回右叉
 
 
-'''
+"""
 作者：yuhan - huang
 链接：https: // leetcode - cn.com / problems / the - dining - philosophers / solution / pythonliang - chong - jie - fa - by - yuhan - huang /
 来源：力扣（LeetCode）
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-'''
+"""

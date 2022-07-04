@@ -1,4 +1,4 @@
-'''
+"""
 给定一个直方图(也称柱状图)，假设有人从上面源源不断地倒水，最后直方图能存多少水量?直方图的宽度为 1。
 
 
@@ -12,7 +12,7 @@
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/volume-of-histogram-lcci
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-'''
+"""
 from typing import List
 
 

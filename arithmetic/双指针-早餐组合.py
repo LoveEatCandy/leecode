@@ -1,4 +1,4 @@
-'''
+"""
 小扣在秋日市集选择了一家早餐摊位，一维整型数组 staple 中记录了每种主食的价格，一维整型数组 drinks 中记录了每种饮料的价格。小扣的计划选择一份主食和一款饮料，且花费不超过 x 元。请返回小扣共有多少种购买方案。
 
 注意：答案需要以 1e9 + 7 (1000000007) 为底取模，如：计算初始结果为：1000000008，请返回 1
@@ -43,7 +43,7 @@
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/2vYnGI
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-'''
+"""
 from typing import List
 
 
@@ -66,16 +66,16 @@ class Solution1:
                 continue
             ans += arr[lt]
 
-        return ans % (10 ** 9 + 7)
+        return ans % (10**9 + 7)
 
 
-'''
+"""
 作者：zzh - 28
 链接：https: // leetcode - cn.com / problems / 2
 vYnGI / solution / shi - jian - fu - za - du - omn - by - zzh - 28 /
 来源：力扣（LeetCode）
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-'''
+"""
 
 
 # 排序+双指针
@@ -94,10 +94,10 @@ class Solution2:
         return res % 1000000007
 
 
-'''
+"""
 作者：ranlizzz
 链接：https: // leetcode - cn.com / problems / 2
 vYnGI / solution / shuang - zhi - zhen - bian - li - liang - ge - zu - shu - by - ranlizz /
 来源：力扣（LeetCode）
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-'''
+"""

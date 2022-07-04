@@ -1,4 +1,4 @@
-'''
+"""
 给你一个 m x n 的矩阵，其中的值均为非负整数，代表二维高度图每个单元的高度，请计算图中形状最多能接多少体积的雨水。
 
  
@@ -17,7 +17,7 @@
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/trapping-rain-water-ii
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-'''
+"""
 from typing import List
 import heapq
 
@@ -41,13 +41,18 @@ class Solution:
         while board:
             h, m, n = heapq.heappop(board)
             neib = []
-            if m + 1 < M and not handled[m + 1][n]: neib.append((m + 1, n))
-            if m - 1 >= 0 and not handled[m - 1][n]: neib.append((m - 1, n))
-            if n + 1 < N and not handled[m][n + 1]: neib.append((m, n + 1))
-            if n - 1 < N and not handled[m][n - 1]: neib.append((m, n - 1))
+            if m + 1 < M and not handled[m + 1][n]:
+                neib.append((m + 1, n))
+            if m - 1 >= 0 and not handled[m - 1][n]:
+                neib.append((m - 1, n))
+            if n + 1 < N and not handled[m][n + 1]:
+                neib.append((m, n + 1))
+            if n - 1 < N and not handled[m][n - 1]:
+                neib.append((m, n - 1))
             for i, j in neib:
                 dif = h - heightMap[i][j]
-                if dif > 0: res += dif
+                if dif > 0:
+                    res += dif
                 handled[i][j] = 1
                 heapq.heappush(board, (h if dif > 0 else heightMap[i][j], i, j))
         return res

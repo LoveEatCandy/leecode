@@ -1,4 +1,4 @@
-'''
+"""
 给定一个整数矩阵，找出最长递增路径的长度。
 
 对于每个单元格，你可以往上，下，左，右四个方向移动。 你不能在对角线方向上移动或移动到边界外（即不允许环绕）。
@@ -27,7 +27,7 @@
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/longest-increasing-path-in-a-matrix
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-'''
+"""
 from typing import List
 from functools import reduce
 
@@ -57,14 +57,17 @@ class Solution:
                 ny = y + dy
                 nx = x + dx
                 if matrix[ny][nx] > num:
-                    saving_matrix[ny][nx] = max(saving_matrix[ny][nx], saving_matrix[y][x] + 1)
+                    saving_matrix[ny][nx] = max(
+                        saving_matrix[ny][nx], saving_matrix[y][x] + 1
+                    )
         return max(reduce(lambda a, b: a + b, saving_matrix))
 
 
 # DFS
 class Solution2:
     def longestIncreasingPath(self, matrix: List[List[int]]) -> int:
-        if not matrix or not matrix[0]: return 0
+        if not matrix or not matrix[0]:
+            return 0
 
         row = len(matrix)
         col = len(matrix[0])
@@ -77,7 +80,11 @@ class Solution2:
             for x, y in [[-1, 0], [1, 0], [0, 1], [0, -1]]:
                 tmp_i = x + i
                 tmp_j = y + j
-                if 0 <= tmp_i < row and 0 <= tmp_j < col and matrix[tmp_i][tmp_j] > matrix[i][j]:
+                if (
+                    0 <= tmp_i < row
+                    and 0 <= tmp_j < col
+                    and matrix[tmp_i][tmp_j] > matrix[i][j]
+                ):
                     res = max(res, 1 + dfs(tmp_i, tmp_j))
             lookup[i][j] = max(res, lookup[i][j])
             return lookup[i][j]

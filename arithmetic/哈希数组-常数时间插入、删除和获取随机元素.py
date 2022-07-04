@@ -1,4 +1,4 @@
-'''
+"""
 设计一个支持在平均 时间复杂度 O(1) 下，执行以下操作的数据结构。
 
 insert(val)：当元素 val 不存在时，向集合中插入该项。
@@ -33,12 +33,11 @@ randomSet.getRandom();
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/insert-delete-getrandom-o1
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-'''
+"""
 import random
 
 
 class RandomizedSet:
-
     def __init__(self):
         """
         Initialize your data structure here.
@@ -74,6 +73,7 @@ class RandomizedSet:
         Get a random element from the set.
         """
         return random.choice(self.l)
+
 
 # Your RandomizedSet object will be instantiated and called as such:
 # obj = RandomizedSet()

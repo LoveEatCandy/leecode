@@ -1,4 +1,4 @@
-'''
+"""
 运用你所掌握的数据结构，设计和实现一个  LRU (最近最少使用) 缓存机制。它应该支持以下操作： 获取数据 get 和 写入数据 put 。
 
 获取数据 get(key) - 如果密钥 (key) 存在于缓存中，则获取密钥的值（总是正数），否则返回 -1。
@@ -21,11 +21,10 @@ cache.put(4, 4);    // 该操作会使得密钥 1 作废
 cache.get(1);       // 返回 -1 (未找到)
 cache.get(3);       // 返回  3
 cache.get(4);       // 返回  4
-'''
+"""
 
 
 class L:
-
     def __init__(self, key=None, val=None, pre=None, next=None):
         self.key = key
         self.val = val
@@ -34,7 +33,6 @@ class L:
 
 
 class LRUCache:
-
     def __init__(self, capacity: int):
         self.head = L()
         self.end = L()
@@ -77,5 +75,3 @@ class LRUCache:
 
 
 # 时间O(1)，空间O(n)
-
-

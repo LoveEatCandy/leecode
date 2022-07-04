@@ -1,4 +1,4 @@
-'''
+"""
 给你一个字符串 s，以及该字符串中的一些「索引对」数组 pairs，其中 pairs[i] = [a, b] 表示字符串中的两个索引（编号从 0 开始）。
 
 你可以 任意多次交换 在 pairs 中任意一对索引处的字符。
@@ -42,13 +42,12 @@ s 中只含有小写英文字母
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/smallest-string-with-swaps
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-'''
+"""
 
 import collections
 
 
 class Solution:
-
     def smallestStringWithSwaps(self, s: str, pairs: [int]) -> str:
         p = {i: i for i in range(len(s))}  # 初始化并查集
 
@@ -69,5 +68,4 @@ class Solution:
             t = sorted(ans[i] for i in q)
             for i, c in zip(sorted(q), t):
                 ans[i] = c
-        return ''.join(ans)
-
+        return "".join(ans)

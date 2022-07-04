@@ -1,4 +1,4 @@
-'''
+"""
 给定一个没有重复数字的序列，返回其所有可能的全排列。
 
 示例:
@@ -13,7 +13,7 @@
   [3,1,2],
   [3,2,1]
 ]
-'''
+"""
 from typing import List
 
 
@@ -27,11 +27,11 @@ class Solution:
                 res.append(father)
             for i, w in enumerate(other):
                 cur = father + [w]
-                k = other[:i] + other[i+1:]
+                k = other[:i] + other[i + 1 :]
                 do(cur, k, l)
+
         do([], nums, o)
         return res
 
 
 # 时间空间 n!
-

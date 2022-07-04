@@ -1,4 +1,4 @@
-'''
+"""
 编写一个可以从 1 到 n 输出代表这个数字的字符串的程序，但是：
 
 如果这个数字可以被 3 整除，输出 "fizz"。
@@ -25,7 +25,7 @@ class FizzBuzz {
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/fizz-buzz-multithreaded
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-'''
+"""
 
 
 import threading
@@ -43,28 +43,28 @@ class FizzBuzz:
         self.fzbz.acquire()
 
     # printFizz() outputs "fizz"
-    def fizz(self, printFizz: 'Callable[[], None]') -> None:
+    def fizz(self, printFizz: "Callable[[], None]") -> None:
         for _ in range(self.n // 3 - self.n // 15):
             self.fz.acquire()
             printFizz()
             self.num.release()
 
     # printBuzz() outputs "buzz"
-    def buzz(self, printBuzz: 'Callable[[], None]') -> None:
+    def buzz(self, printBuzz: "Callable[[], None]") -> None:
         for _ in range(self.n // 5 - self.n // 15):
             self.bz.acquire()
             printBuzz()
             self.num.release()
 
     # printFizzBuzz() outputs "fizzbuzz"
-    def fizzbuzz(self, printFizzBuzz: 'Callable[[], None]') -> None:
+    def fizzbuzz(self, printFizzBuzz: "Callable[[], None]") -> None:
         for _ in range(self.n // 15):
             self.fzbz.acquire()
             printFizzBuzz()
             self.num.release()
 
     # printNumber(x) outputs "x", where x is an integer.
-    def number(self, printNumber: 'Callable[[int], None]') -> None:
+    def number(self, printNumber: "Callable[[int], None]") -> None:
         for i in range(1, self.n + 1):
             self.num.acquire()
             if i % 3 != 0 and i % 5 != 0:
@@ -76,4 +76,3 @@ class FizzBuzz:
                 self.bz.release()
             else:
                 self.fzbz.release()
-

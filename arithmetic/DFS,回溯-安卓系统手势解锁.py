@@ -1,4 +1,4 @@
-'''
+"""
 我们都知道安卓有个手势解锁的界面，是一个 3 x 3 的点所绘制出来的网格。
 
 给你两个整数，分别为 ​​m 和 n，其中 1 ≤ m ≤ n ≤ 9，那么请你统计一下有多少种解锁手势，是至少需要经过 m 个点，但是最多经过不超过 n 个点的。
@@ -43,7 +43,7 @@
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/android-unlock-patterns
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-'''
+"""
 
 
 class Solution:
@@ -51,15 +51,15 @@ class Solution:
         mode = list(range(1, 10))
         count = 0
         condition = {
-            '13': 2,
-            '39': 6,
-            '79': 8,
-            '17': 4,
-            '19': 5,
-            '37': 5,
-            '46': 5,
-            '28': 5
-            }
+            "13": 2,
+            "39": 6,
+            "79": 8,
+            "17": 4,
+            "19": 5,
+            "37": 5,
+            "46": 5,
+            "28": 5,
+        }
 
         def do(cur, others):
             nonlocal count
@@ -70,14 +70,15 @@ class Solution:
             if others:
                 for i, w in enumerate(others):
                     if len(cur) > 0:
-                        key = '%d%d' % (min(w, cur[-1]), max(w, cur[-1]))
+                        key = "%d%d" % (min(w, cur[-1]), max(w, cur[-1]))
                         if key in condition and condition.get(key) not in cur:
                             continue
-                    do(cur+[w], others[:i]+others[i+1:])
+                    do(cur + [w], others[:i] + others[i + 1 :])
+
         do([1], mode[1:])
-        do([2], mode[:1]+mode[2:])
+        do([2], mode[:1] + mode[2:])
         count *= 4
-        do([5], mode[:4]+mode[5:])
+        do([5], mode[:4] + mode[5:])
         return count
 
 
@@ -119,9 +120,10 @@ class Solution2:
 
         return ans
 
-'''
+
+"""
 作者：amchor
 链接：https: // leetcode - cn.com / problems / android - unlock - patterns / solution / dai - zhuang - tai - de - shen - du - you - xian - by - amchor /
 来源：力扣（LeetCode）
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-'''
+"""

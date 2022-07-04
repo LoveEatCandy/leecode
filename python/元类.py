@@ -2,7 +2,6 @@ from abc import ABCMeta
 
 
 class Meta(ABCMeta):
-
     def __new__(mcs, name, bases, namespace, **kwargs):
         print("entering Meta.__new__()")
         cls = super().__new__(mcs, name, bases, namespace, **kwargs)

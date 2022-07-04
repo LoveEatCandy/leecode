@@ -1,4 +1,4 @@
-'''
+"""
 数据流中的中位数
 如何得到一个数据流中的中位数？如果从数据流中读出奇数个数值，那么中位数就是所有数值排序之后位于中间的数值。如果从数据流中读出偶数个数值，那么中位数就是所有数值排序之后中间两个数的平均值。
 
@@ -29,14 +29,13 @@ double findMedian() - 返回目前所有元素的中位数。
 限制：
 
 最多会对 addNum、findMedian 进行 50000 次调用。
-'''
+"""
 import heapq
 import bisect
 
 
 # 二分插入
 class MedianFinder1:
-
     def __init__(self):
         """
         initialize your data structure here.
@@ -59,7 +58,6 @@ class MedianFinder1:
 
 # 堆
 class MedianFinder2:
-
     def __init__(self):
         """
         initialize your data structure here.
@@ -81,9 +79,9 @@ class MedianFinder2:
             return self.min_heap[0]
 
 
-'''
+"""
 作者：z1m
 链接：https://leetcode-cn.com/problems/shu-ju-liu-zhong-de-zhong-wei-shu-lcof/solution/you-xian-dui-lie-by-z1m/
 来源：力扣（LeetCode）
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-'''
+"""

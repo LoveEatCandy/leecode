@@ -1,4 +1,4 @@
-'''
+"""
 使用队列实现栈的下列操作：
 
 push(x) -- 元素 x 入栈
@@ -14,11 +14,10 @@ empty() -- 返回栈是否为空
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/implement-stack-using-queues
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-'''
+"""
 
 
 class MyStack:
-
     def __init__(self):
         """
         Initialize your data structure here.
@@ -62,6 +61,7 @@ class MyStack:
         """
         return self.q == []
 
+
 # Your MyStack object will be instantiated and called as such:
 # obj = MyStack()
 # obj.push(x)
@@ -70,7 +70,7 @@ class MyStack:
 # param_4 = obj.empty()
 
 
-'''
+"""
 使用栈实现队列的下列操作：
 
 push(x) -- 将一个元素放入队列的尾部。
@@ -95,11 +95,10 @@ queue.empty(); // 返回 false
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/implement-queue-using-stacks
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-'''
+"""
 
 
 class MyQueue:
-
     def __init__(self):
         """
         Initialize your data structure here.
@@ -143,10 +142,10 @@ class MyQueue:
         """
         return self.stack == []
 
+
 # Your MyQueue object will be instantiated and called as such:
 # obj = MyQueue()
 # obj.push(x)
 # param_2 = obj.pop()
 # param_3 = obj.peek()
 # param_4 = obj.empty()
-

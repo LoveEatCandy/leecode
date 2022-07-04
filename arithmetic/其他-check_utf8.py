@@ -1,4 +1,4 @@
-'''
+"""
 UTF-8 中的一个字符可能的长度为 1 到 4 字节，遵循以下的规则：
 
 对于 1 字节的字符，字节的第一位设为0，后面7位为这个符号的unicode码。
@@ -31,17 +31,17 @@ data = [235, 140, 4], 表示 8 位的序列: 11101011 10001100 00000100.
 前 3 位都是 1 ，第 4 位为 0 表示它是一个3字节字符。
 下一个字节是开头为 10 的延续字节，这是正确的。
 但第二个延续字节不以 10 开头，所以是不符合规则的。
-'''
+"""
 
 
 class Solution:
     def validUtf8(self, data):
         n_bytes = 0
         for num in data:
-            bin_rep = format(num, '#010b')[-8:]
+            bin_rep = format(num, "#010b")[-8:]
             if n_bytes == 0:
                 for bit in bin_rep:
-                    if bit == '0':
+                    if bit == "0":
                         break
                     n_bytes += 1
                 if n_bytes == 0:
@@ -49,8 +49,7 @@ class Solution:
                 if n_bytes == 1 or n_bytes > 4:
                     return False
             else:
-                if not (bin_rep[0] == '1' and bin_rep[1] == '0'):
+                if not (bin_rep[0] == "1" and bin_rep[1] == "0"):
                     return False
             n_bytes -= 1
         return n_bytes == 0
-

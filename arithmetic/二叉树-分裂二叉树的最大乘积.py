@@ -1,4 +1,4 @@
-'''
+"""
 给你一棵二叉树，它的根为 root 。请你删除 1 条边，使二叉树分裂成两棵子树，且它们子树和的乘积尽可能大。
 
 由于答案可能会很大，请你将结果对 10^9 + 7 取模后再返回。
@@ -37,7 +37,7 @@
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/maximum-product-of-splitted-binary-tree
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-'''
+"""
 
 
 # Definition for a binary tree node.
@@ -67,4 +67,3 @@ class Solution:
         for val in cache:
             _max = max(val * (total - val), _max)
         return _max % 1000000007
-

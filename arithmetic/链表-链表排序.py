@@ -1,4 +1,4 @@
-'''
+"""
 在 O(n log n) 时间复杂度和常数级空间复杂度下，对链表进行排序。
 
 示例 1:
@@ -13,7 +13,7 @@
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/sort-list
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-'''
+"""
 
 
 class ListNode:
@@ -67,7 +67,10 @@ class Solution2:
                 h2, i = h, step
                 while i and h:
                     h, i = h.next, i - 1
-                c1, c2 = step, step - i  # the `c2`: length of `h2` can be small than the `step`.
+                c1, c2 = (
+                    step,
+                    step - i,
+                )  # the `c2`: length of `h2` can be small than the `step`.
                 # merge the `h1` and `h2`.
                 while c1 and c2:
                     if h1.val < h2.val:

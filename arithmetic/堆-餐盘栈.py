@@ -1,4 +1,4 @@
-'''
+"""
 我们把无限数量 ∞ 的栈排成一行，按从左到右的次序从 0 开始编号。每个栈的的最大容量 capacity 都相同。
 
 实现一个叫「餐盘」的类 DinnerPlates：
@@ -62,13 +62,12 @@ D.pop()            // 返回 -1。仍然没有栈。
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/dinner-plate-stacks
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-'''
+"""
 
 import heapq
 
 
 class DinnerPlates:
-
     def __init__(self, capacity: int):
         self.c = capacity
         self.stack = []
@@ -98,6 +97,7 @@ class DinnerPlates:
             heapq.heappush(self.heap, index)
             return self.stack[index].pop()
         return -1
+
 
 # Your DinnerPlates object will be instantiated and called as such:
 # obj = DinnerPlates(capacity)

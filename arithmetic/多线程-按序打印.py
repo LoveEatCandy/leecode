@@ -1,4 +1,4 @@
-'''
+"""
 我们提供了一个类：
 
 public class Foo {
@@ -34,7 +34,7 @@ public class Foo {
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/print-in-order
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-'''
+"""
 
 # 方法一，while循环法（超时）：
 #
@@ -54,17 +54,17 @@ class Foo:
     def __init__(self):
         self.t = 0
 
-    def first(self, printFirst: 'Callable[[], None]') -> None:
+    def first(self, printFirst: "Callable[[], None]") -> None:
         printFirst()
         self.t = 1
 
-    def second(self, printSecond: 'Callable[[], None]') -> None:
+    def second(self, printSecond: "Callable[[], None]") -> None:
         while self.t != 1:
             pass
         printSecond()
         self.t = 2
 
-    def third(self, printThird: 'Callable[[], None]') -> None:
+    def third(self, printThird: "Callable[[], None]") -> None:
         while self.t != 2:
             pass
         printThird()
@@ -82,16 +82,16 @@ class Foo2:
         self.c = threading.Condition()
         self.t = 0
 
-    def first(self, printFirst: 'Callable[[], None]') -> None:
+    def first(self, printFirst: "Callable[[], None]") -> None:
         self.res(0, printFirst)
 
-    def second(self, printSecond: 'Callable[[], None]') -> None:
+    def second(self, printSecond: "Callable[[], None]") -> None:
         self.res(1, printSecond)
 
-    def third(self, printThird: 'Callable[[], None]') -> None:
+    def third(self, printThird: "Callable[[], None]") -> None:
         self.res(2, printThird)
 
-    def res(self, val: int, func: 'Callable[[], None]') -> None:
+    def res(self, val: int, func: "Callable[[], None]") -> None:
         with self.c:
             self.c.wait_for(lambda: val == self.t)  # 参数是函数对象，返回值是bool类型
             func()
@@ -112,16 +112,16 @@ class Foo3:
         self.l2 = threading.Lock()
         self.l2.acquire()
 
-    def first(self, printFirst: 'Callable[[], None]') -> None:
+    def first(self, printFirst: "Callable[[], None]") -> None:
         printFirst()
         self.l1.release()
 
-    def second(self, printSecond: 'Callable[[], None]') -> None:
+    def second(self, printSecond: "Callable[[], None]") -> None:
         self.l1.acquire()
         printSecond()
         self.l2.release()
 
-    def third(self, printThird: 'Callable[[], None]') -> None:
+    def third(self, printThird: "Callable[[], None]") -> None:
         self.l2.acquire()
         printThird()
 
@@ -137,16 +137,16 @@ class Foo4:
         self.s1 = threading.Semaphore(0)
         self.s2 = threading.Semaphore(0)
 
-    def first(self, printFirst: 'Callable[[], None]') -> None:
+    def first(self, printFirst: "Callable[[], None]") -> None:
         printFirst()
         self.s1.release()
 
-    def second(self, printSecond: 'Callable[[], None]') -> None:
+    def second(self, printSecond: "Callable[[], None]") -> None:
         self.s1.acquire()
         printSecond()
         self.s2.release()
 
-    def third(self, printThird: 'Callable[[], None]') -> None:
+    def third(self, printThird: "Callable[[], None]") -> None:
         self.s2.acquire()
         printThird()
 
@@ -162,16 +162,16 @@ class Foo5:
         self.b1 = threading.Event()
         self.b2 = threading.Event()
 
-    def first(self, printFirst: 'Callable[[], None]') -> None:
+    def first(self, printFirst: "Callable[[], None]") -> None:
         printFirst()
         self.b1.set()
 
-    def second(self, printSecond: 'Callable[[], None]') -> None:
+    def second(self, printSecond: "Callable[[], None]") -> None:
         self.b1.wait()
         printSecond()
         self.b2.set()
 
-    def third(self, printThird: 'Callable[[], None]') -> None:
+    def third(self, printThird: "Callable[[], None]") -> None:
         self.b2.wait()
         printThird()
 
@@ -188,16 +188,16 @@ class Foo6:
         self.b1 = threading.Barrier(2)
         self.b2 = threading.Barrier(2)
 
-    def first(self, printFirst: 'Callable[[], None]') -> None:
+    def first(self, printFirst: "Callable[[], None]") -> None:
         printFirst()
         self.b1.wait()
 
-    def second(self, printSecond: 'Callable[[], None]') -> None:
+    def second(self, printSecond: "Callable[[], None]") -> None:
         self.b1.wait()
         printSecond()
         self.b2.wait()
 
-    def third(self, printThird: 'Callable[[], None]') -> None:
+    def third(self, printThird: "Callable[[], None]") -> None:
         self.b2.wait()
         printThird()
 
@@ -213,16 +213,16 @@ class Foo7:
         self.q1 = queue.Queue()
         self.q2 = queue.Queue()
 
-    def first(self, printFirst: 'Callable[[], None]') -> None:
+    def first(self, printFirst: "Callable[[], None]") -> None:
         printFirst()
         self.q1.put(0)
 
-    def second(self, printSecond: 'Callable[[], None]') -> None:
+    def second(self, printSecond: "Callable[[], None]") -> None:
         self.q1.get()
         printSecond()
         self.q2.put(0)
 
-    def third(self, printThird: 'Callable[[], None]') -> None:
+    def third(self, printThird: "Callable[[], None]") -> None:
         self.q2.get()
         printThird()
 
@@ -240,16 +240,16 @@ class Foo8:
         self.q2 = queue.Queue(1)
         self.q2.put(0)
 
-    def first(self, printFirst: 'Callable[[], None]') -> None:
+    def first(self, printFirst: "Callable[[], None]") -> None:
         printFirst()
         self.q1.get()
 
-    def second(self, printSecond: 'Callable[[], None]') -> None:
+    def second(self, printSecond: "Callable[[], None]") -> None:
         self.q1.put(0)
         printSecond()
         self.q2.get()
 
-    def third(self, printThird: 'Callable[[], None]') -> None:
+    def third(self, printThird: "Callable[[], None]") -> None:
         self.q2.put(0)
         printThird()
 

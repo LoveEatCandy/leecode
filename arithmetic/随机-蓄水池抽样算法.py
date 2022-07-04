@@ -1,4 +1,4 @@
-'''
+"""
 给定一个单链表，随机选择链表的一个节点，并返回相应的节点值。保证每个节点被选的概率一样。
 
 进阶:
@@ -18,7 +18,7 @@ solution.getRandom();
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/linked-list-random-node
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-'''
+"""
 import random
 
 
@@ -29,7 +29,6 @@ class ListNode:
 
 
 class Solution:
-
     def __init__(self, head: ListNode):
         self.head = head
 
@@ -46,9 +45,9 @@ class Solution:
         return reserve
 
 
-'''
+"""
 作者：jackwener
 链接：https: // leetcode - cn.com / problems / linked - list - random - node / solution / xu - shui - chi - chou - yang - suan - fa - by - jackwener /
 来源：力扣（LeetCode）
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-'''
+"""

@@ -1,4 +1,4 @@
-'''
+"""
 输入某二叉树的前序遍历和中序遍历的结果，请重建该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。
 
  
@@ -23,7 +23,7 @@
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/zhong-jian-er-cha-shu-lcof
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-'''
+"""
 from typing import List
 
 
@@ -59,6 +59,6 @@ class Solution2:
             return None
         head = TreeNode(preorder[0])
         head_idx = inorder.index(preorder[0])
-        head.left = self.buildTree(preorder[1:head_idx], inorder[:head_idx + 1])
-        head.right = self.buildTree(preorder[head_idx + 1:], inorder[head_idx + 1:])
+        head.left = self.buildTree(preorder[1:head_idx], inorder[: head_idx + 1])
+        head.right = self.buildTree(preorder[head_idx + 1 :], inorder[head_idx + 1 :])
         return head

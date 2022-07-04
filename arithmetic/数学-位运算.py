@@ -1,4 +1,4 @@
-'''
+"""
 下面是3道位运算的题目（模板是数组中除了target其余数字出现多少次，找target）
 异或的性质：两个数字异或的结果a ^ b是将
 a
@@ -29,7 +29,7 @@ b
 .000
 一位一位的恢复出来这个数。每一位判断有几个1，然后如果cnt % 3 != 0
 就说明这个bit上我们寻找的target也是1, res = res | bit(按位或操作)。判断完32个位置之后得到结果
-'''
+"""
 from typing import List
 
 
@@ -44,10 +44,10 @@ class Solution:
                     cnt = cnt + 1
             if cnt % 3 == 1:
                 res = res | idx
-        return (res)
+        return res
 
 
-'''
+"""
 [56 - 数组中除了两个元素只出现一次，剩下所有元素出现了两次，找到这两个元素]
 我们进行一次全员异或操作，得到的结果就是那两个只出现一次的不同的数字的异或结果。
 
@@ -73,7 +73,7 @@ idx = 1; while idx & res == 0: idx = idx << 1，分组的依据就来了，遍�
 1
 的分成一组。这样肯定能保证
 相同的数字分成相同组, 不同的那两个数字也会被分成不同组。
-'''
+"""
 
 
 class Solution2:
@@ -92,12 +92,12 @@ class Solution2:
                 a = a ^ i
             else:
                 b = b ^ i
-        return ([a, b])
+        return [a, b]
 
 
-'''
+"""
 作者：jichenyeung
 链接：https: // leetcode - cn.com / problems / shu - zu - zhong - shu - zi - chu - xian - de - ci - shu - ii - lcof / solution / xiang - xi - zong - jie - kan - bu - dong - ni - gen - wo - xing - xi - 2 /
 来源：力扣（LeetCode）
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-'''
+"""
