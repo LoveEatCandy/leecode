@@ -104,7 +104,7 @@ def heap_sort(mylist):
     n = len(mylist)
 
     # 1. 无序列表构建成最大堆
-    for i in range(n - 2 // 2, -1, -1):
+    for i in range(n - 1, -1, -1):
         heap_sink(mylist, n, i)
 
     # 2. 循环删除堆顶元素，移到列表尾部，调节堆产生新的堆顶
