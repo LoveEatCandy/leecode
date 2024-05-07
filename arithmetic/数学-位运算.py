@@ -30,6 +30,7 @@ b
 一位一位的恢复出来这个数。每一位判断有几个1，然后如果cnt % 3 != 0
 就说明这个bit上我们寻找的target也是1, res = res | bit(按位或操作)。判断完32个位置之后得到结果
 """
+
 from typing import List
 
 

@@ -30,8 +30,9 @@ double findMedian() - 返回目前所有元素的中位数。
 
 最多会对 addNum、findMedian 进行 50000 次调用。
 """
-import heapq
+
 import bisect
+import heapq
 
 
 # 二分插入
@@ -67,7 +68,9 @@ class MedianFinder2:
         self.min_heap = []
 
     def addNum(self, num: int) -> None:
-        if len(self.max_heap) == len(self.min_heap):  # 先加到大顶堆，再把大堆顶元素加到小顶堆
+        if len(self.max_heap) == len(
+            self.min_heap
+        ):  # 先加到大顶堆，再把大堆顶元素加到小顶堆
             heapq.heappush(self.min_heap, -heapq.heappushpop(self.max_heap, -num))
         else:  # 先加到小顶堆，再把小堆顶元素加到大顶堆
             heapq.heappush(self.max_heap, -heapq.heappushpop(self.min_heap, num))

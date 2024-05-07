@@ -43,6 +43,7 @@ connections[i][0] != connections[i][1]
 链接：https://leetcode-cn.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 """
+
 from typing import List
 
 
