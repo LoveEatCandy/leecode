@@ -74,8 +74,24 @@ def back_sort(root: TreeNode):
             stack1.append(cur.right)
         stack2.append(cur)
     while stack2:
-        n = stack2.pop()
-        r.append(n.val)
+        r.append(stack2.pop().val)
+    return r
+
+
+def back_sort3(root: TreeNode):
+    stack1 = []
+    stack2 = []
+    r = []
+    while root or stack1:
+        if root:
+            stack2.append(root)
+            if root.left:
+                stack1.append(root.left)
+            root = root.right
+        else:
+            root = stack1.pop()
+    while stack2:
+        r.append(stack2.pop().val)
     return r
 
 
@@ -105,4 +121,4 @@ a.right = r1
 
 
 print(back_sort(a))
-print(back_sort2(a))
+print(back_sort3(a))
